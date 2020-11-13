@@ -15,4 +15,11 @@ class ClientesController extends Controller
     		'clientes'=>$clientes
     	]);
     }
+    public function show(Request $request) {
+    	$idCliente= $request->id;
+    	$cliente = Cliente::where('id_cliente', $idCliente)->with('emcomendas')->first();
+    	return view('clientes.show', [
+    		'cliente'=>$cliente
+    	]);
+    }
 }
