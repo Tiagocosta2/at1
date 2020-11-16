@@ -15,4 +15,11 @@ class VendedoresController extends Controller
     		'vendedores'=>$vendedores
     	]);
     }
+    public function show(Request $request) {
+    	$idVendedor= $request->id;
+    	$vendedor = Vendedor::where('id_vendedor', $idVendedor)->with('encomendas')->first();
+    	return view('vendedores.show', [
+    		'vendedor'=>$vendedor
+    	]);
+    }
 }

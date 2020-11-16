@@ -2,7 +2,8 @@
 @section('conteudo')
 Nome:
 @foreach($vendedores as $vendedor)
-{{$vendedor->nome}}<br>
+<a href="{{route('vendedores.show', ['id'=>$vendedor->id_vendedor])}}">{{$vendedor->nome}}</a>
+<br>
 @endforeach
 
 

@@ -15,4 +15,11 @@ class EncomendasController extends Controller
     		'encomendas'=>$encomendas
     	]);
     }
+    public function show(Request $request) {
+    	$idEncomenda= $request->id;
+    	$encomenda = Encomenda::where('id_encomenda', $idEncomenda)->with('clientes','vendedores')->first();
+    	return view('encomendas.show', [
+    		'encomenda'=>$encomenda
+    	]);
+    }
 }

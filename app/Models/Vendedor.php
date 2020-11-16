@@ -9,5 +9,9 @@ class Vendedor extends Model
 {
     use HasFactory;
     protected $primaryKey="id_vendedor";
-    protected $table = "vendedores";    
+    protected $table = "vendedores";   
+
+    public function encomendas() {
+    	return $this->hasMany('App\Models\Encomenda', 'id_vendedor');
+    } 
 }
