@@ -26,10 +26,10 @@ Route::get('/vendedores', 'App\Http\Controllers\VendedoresController@index')
 	->name('vendedores.index');
 
 Route::get('/clientes/{id}/show', 'App\Http\Controllers\ClientesController@show')
-	->name('clientes.show');	
+	->name('clientes.show');
 Route::get('/encomendas/{id}/show', 'App\Http\Controllers\EncomendasController@show')
 	->name('encomendas.show');
 Route::get('/produtos/{id}/show', 'App\Http\Controllers\ProdutosController@show')
 	->name('produtos.show');
 Route::get('/vendedores/{id}/show', 'App\Http\Controllers\VendedoresController@show')
-	->name('vendedores.show');			
+	->name('vendedores.show');

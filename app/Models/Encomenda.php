@@ -17,5 +17,4 @@ class Encomenda extends Model
     public function vendedores() {
     	return $this->belongsTo('App\Models\Vendedor', 'id_vendedor');
     }
-    
 }
