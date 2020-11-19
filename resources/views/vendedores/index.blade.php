@@ -1,6 +1,6 @@
 @extends('layout')
 @section('conteudo')
-Nome:
+Nome:<br>
 @foreach($vendedores as $vendedor)
 <a href="{{route('vendedores.show', ['id'=>$vendedor->id_vendedor])}}">{{$vendedor->nome}}</a>
 <br>

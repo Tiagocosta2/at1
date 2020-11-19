@@ -33,3 +33,5 @@ Route::get('/produtos/{id}/show', 'App\Http\Controllers\ProdutosController@show'
 	->name('produtos.show');
 Route::get('/vendedores/{id}/show', 'App\Http\Controllers\VendedoresController@show')
 	->name('vendedores.show');
+Route::post('/mostrar', 'App\Http\Controllers\EncomendasController@mostrar')
+	->name('processar.form');	

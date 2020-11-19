@@ -17,4 +17,12 @@ class Encomenda extends Model
     public function vendedores() {
     	return $this->belongsTo('App\Models\Vendedor', 'id_vendedor');
     }
+        public function produtos () {
+    	return $this->belongsToMany(
+    		'App\Models\Produto',
+    		'encomendas_produtos',
+    		'id_encomenda',
+    		'id_produto'
+    	)->withTimestamps();
+    }
 }

@@ -9,5 +9,14 @@ class Produto extends Model
 {
     use HasFactory;
     protected $primaryKey="id_produto";
-    protected $table = "produtos";    
+    protected $table = "produtos";  
+
+        public function encomendas () {
+    	return $this->belongsToMany(
+    		'App\Models\Encomenda',
+    		'encomendas_produtos',
+    		'id_produto',
+    		'id_encomenda'
+    	)->withTimestamps();
+    }  
 }

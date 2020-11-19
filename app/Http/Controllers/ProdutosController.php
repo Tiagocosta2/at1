@@ -15,4 +15,11 @@ class ProdutosController extends Controller
     		'produtos'=>$produtos
     	]);
     }
+    public function show(Request $request) {
+    	$idProduto= $request->id; 
+    	$produto = Produto::where('id_produto', $idProduto)->with('encomendas')->first();
+    	return view('produtos.show', [
+    		'produto'=>$produto
+    	]);
+    }
 }

@@ -17,9 +17,16 @@ class EncomendasController extends Controller
     }
     public function show(Request $request) {
     	$idEncomenda= $request->id;
-    	$encomenda = Encomenda::where('id_encomenda', $idEncomenda)->with('clientes','vendedores')->first();
+    	$encomenda = Encomenda::where('id_encomenda', $idEncomenda)->with(['clientes','vendedores','produtos'])->first();
     	return view('encomendas.show', [
     		'encomenda'=>$encomenda
     	]);
+    }
+    public function mostrar (Request $request){
+        $caixa = $request->$caixa;
+        $encomenda= Encomenda::where('nome','like','%')->with('clientes')->first();
+        return view('encomendas.mostrar', [
+            'encomenda'=>$encomenda
+        ]);
     }
 }
