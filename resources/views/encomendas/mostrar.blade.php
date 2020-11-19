@@ -1,4 +1,4 @@
 Nome do Cliente:
-@foreach($encomenda->clientes as $cli)
+@foreach($encomenda as $cli)
 {{$cli->nome}}
 @endforeach

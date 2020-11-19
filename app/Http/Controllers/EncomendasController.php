@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Encomenda;
+use App\Models\Cliente;
 
 class EncomendasController extends Controller
 {
@@ -23,8 +24,8 @@ class EncomendasController extends Controller
     	]);
     }
     public function mostrar (Request $request){
-        $caixa = $request->$caixa;
-        $encomenda= Encomenda::where('nome','like','%')->with('clientes')->first();
+        $caixa = $request->caixa;
+        $encomenda= Cliente::where('nome','like','%'.$caixa.'%')->get();
         return view('encomendas.mostrar', [
             'encomenda'=>$encomenda
         ]);

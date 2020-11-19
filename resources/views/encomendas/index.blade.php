@@ -1,11 +1,22 @@
 @extends('layout')
 @section('conteudo')
-Data:<br>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col" style="text-align: center;">Data</th>
+		</tr>
+	</thead>
+	<tbody>
+<tr>
 @foreach($encomendas as $encomenda)
-<a href="{{route('encomendas.show', ['id'=>$encomenda->id_encomenda])}}">{{$encomenda->data}}</a>
+<th scope="row" style="text-align: center;"><a href="{{route('encomendas.show', ['id'=>$encomenda->id_encomenda])}}">{{$encomenda->data}}</a></th>
 <br>
 @endforeach
-
+</tr>
+</tbody>
+</table>
+@endsection
+<br>
 <form method="post" action="{{route('processar.form')}}">
         @csrf
 <label for="name"> Nome do Cliente </label>
@@ -14,4 +25,3 @@ Data:<br>
 </form>
 
 
-@endsection

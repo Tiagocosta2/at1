@@ -6,12 +6,8 @@ Observações:
 {{$encomenda->observacoes}}<br>
 Cliente:
 {{$encomenda->clientes->nome}}<br>
-
 Vendedor:
 {{$encomenda->vendedores->nome}}<br>
-
-
-
 @else
 <h1 style="color:#ff0000">Erro</h1>
 @endif
