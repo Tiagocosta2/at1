@@ -9,7 +9,7 @@
 	</thead>
 </div>
 	<tbody>
-	<tr>	
+	<tr>
 @foreach($produtos as $produto)
 <th scope="row"><a href="{{route('produtos.show', ['id'=>$produto->id_produto])}}">{{$produto->designacao}}</a></th>
 <br>
